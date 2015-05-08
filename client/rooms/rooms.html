@@ -1,0 +1,10 @@
+<template name="rooms">
+
+    {{#each rooms}}
+        <a href="/rooms/{{_id}}"><div>{{name}}</div></a>
+    {{/each}}
+
+    <input type="text" id="new-room-name">
+    <input type="button" id="add-new-room" value="Add Room">
+
+</template>

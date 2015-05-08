@@ -1,0 +1,20 @@
+<template name="messages">
+
+    {{#with room}}
+
+        Room Name: {{name}}
+
+    {{/with}}
+
+    {{#each messages}}
+    <div>
+        {{message}}
+        {{authorEmail}}
+        {{created}}
+    </div>
+    {{/each}}
+
+    <input type="text" id="new-message">
+    <input type="button" id="add-new-message" value="Add Message">
+
+</template>

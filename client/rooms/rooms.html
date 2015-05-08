@@ -1,10 +1,21 @@
 <template name="rooms">
 
-    {{#each rooms}}
-        <a href="/rooms/{{_id}}"><div>{{name}}</div></a>
-    {{/each}}
+    {{> nav}}
 
-    <input type="text" id="new-room-name">
-    <input type="button" id="add-new-room" value="Add Room">
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h2>Rooms list</h2>
+            {{#each rooms}}
+            <p><a href="/rooms/{{_id}}">
+                <div>{{name}}</div>
+            </a></p>
+            {{/each}}
+
+            <h4 style="margin-top: 20px">Type new room here</h4>
+            <input type="text" id="new-room-name" style="border: 1px black solid">
+            <input type="button" id="add-new-room" value="Add Room">
+
+        </div>
+    </div>
 
 </template>

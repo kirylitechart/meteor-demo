@@ -1,20 +1,32 @@
 <template name="messages">
 
-    {{#with room}}
 
-        Room Name: {{name}}
+    {{> nav}}
 
-    {{/with}}
+    <div class="row">
+        <div class="col s10 offset-s1">
 
-    {{#each messages}}
-    <div>
-        {{message}}
-        {{authorEmail}}
-        {{created}}
+            {{#with room}}
+            <h2>Room Name: {{name}}</h2>
+            {{/with}}
+
+            {{#each messages}}
+            <p>
+
+            <div>
+                <h5>{{message}}</h5>
+                <h6>{{authorEmail}} {{created}}</h6>
+            </div>
+            <div class="divider"></div>
+            </p>
+            {{/each}}
+
+            <h4 style="margin-top: 20px">Type new message here</h4>
+            <input type="text" id="new-message" style="border: 1px black solid">
+            <input type="button" id="add-new-message" value="Add Message">
+
+        </div>
     </div>
-    {{/each}}
 
-    <input type="text" id="new-message">
-    <input type="button" id="add-new-message" value="Add Message">
 
 </template>
